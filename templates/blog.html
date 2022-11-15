@@ -1,0 +1,25 @@
+{% extends "layout/base.html" %}
+{% import "macros/section-color.html" as sections %}
+ 
+{% block header %}
+  <link rel="stylesheet" href="/style/blog.css">
+{% endblock header %}
+
+<script>
+  let colors = []
+
+</script>
+
+{% block content %}
+  <h1 class="blog_title">
+    {{ section.title }}
+  </h1>
+  
+    <div id="content">
+    {% for section in section.subsections %}
+      {%  set section = get_section(path=section) %}
+        {{ sections::block(section=section) }}
+    {% endfor %}
+    </div>
+
+{% endblock content %}

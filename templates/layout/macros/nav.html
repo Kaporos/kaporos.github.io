@@ -1,0 +1,42 @@
+{% import "layout/macros/icons.html" as icons %}
+
+
+{% macro nav() %}
+    <nav>
+        <section id="nav__left">
+            <a href="/"><h1 id="nav__brand">{{config.title}}</h1></a>
+            {% set  main_section = get_section(path="_index.md") %}
+            {% if main_section.subsections %}
+                {% for s in main_section.subsections %}
+                {% set subsection = get_section(path=s) %} 
+                {% if subsection.extra.nav %}
+                    <a class="a__hover" href="{{ subsection.permalink }}">{{ subsection.title }}</a>
+                {% endif %} 
+                {% endfor %}
+            {% endif %}
+        </section>
+        <section id="nav__right">
+            <div id="search" x-data="{results: []}">
+                <input x-on:input="(e) => {results = search(e)}" type="text" name="Recherche" placeholder="Rechercher" id="search_input">
+                <div x-cloak x-show="results.length > 0" id="results">
+                    <template x-for="result in results">
+                        
+                        <div class="result" x-on:click="() => {Turbolinks.visit(result.url)}">
+                            <a :href="result.url">
+                                <h5 x-html="result.title"></h5>
+                            </a>
+                            <p x-html="result.body"></p>
+                        </div>
+
+                    </template>
+                </div>
+            </div>
+            <div id="social">
+                {{ icons::github(size=24, link=config.extra.github) }}
+            </div>
+        </section>
+
+    </nav>
+    <script defer src="/search.js"></script>
+
+{% endmacro nav%}
