@@ -17,6 +17,8 @@ article {
      border-color: rgba(0,0,0,.1);
      border-style: solid;
      padding: 0 1vw;
+     padding-bottom: 20vh;
+
  }
 
 
@@ -88,4 +90,9 @@ $breakpoint-mobile: 700px;
         width: 95vw;
         margin-left: 2.5vw;
     }
+}
+
+h2,h3{
+   padding-top: 7vh;
+   margin-top: -7vh;
 }
