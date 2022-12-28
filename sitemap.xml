@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://theo.daron.be/</loc>
+    </url>
+    <url>
+        <loc>https://theo.daron.be/syntheses/</loc>
+    </url>
+    <url>
+        <loc>https://theo.daron.be/syntheses/algebre_1/</loc>
+    </url>
+    <url>
+        <loc>https://theo.daron.be/syntheses/analyse_1/</loc>
+    </url>
+    <url>
+        <loc>https://theo.daron.be/syntheses/analyse_1/continuite-fonctions/</loc>
+    </url>
+    <url>
+        <loc>https://theo.daron.be/syntheses/analyse_1/derivabilite/</loc>
+    </url>
+    <url>
+        <loc>https://theo.daron.be/syntheses/analyse_1/integrales/</loc>
+    </url>
+    <url>
+        <loc>https://theo.daron.be/syntheses/analyse_1/taylor/</loc>
+    </url>
+    <url>
+        <loc>https://theo.daron.be/syntheses/physique_1/</loc>
+    </url>
+    <url>
+        <loc>https://theo.daron.be/syntheses/physique_1/electric01/</loc>
+    </url>
+</urlset>

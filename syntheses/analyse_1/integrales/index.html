@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>- Théo Daron -</title>
+  <link rel="stylesheet" href="/style/style.css">
+  <link rel="stylesheet" href="/style/layout/base.css">
+  <script defer src="/elasticlunr.min.js"></script>
+  <script defer src="/search_index.en.js"></script>
+  <script defer src="/alpine.min.js"></script>
+  <script defer src="/turbolink.js" integrity="sha512-P3/SDm/poyPMRBbZ4chns8St8nky2t8aeG09fRjunEaKMNEDKjK3BuAstmLKqM7f6L1j0JBYcIRL4h2G6K6Lew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+<link rel="stylesheet" href="/style/post.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css" integrity="sha384-Juol1FqnotbkyZUT5Z7gUPjQ9gzlwCENvUZTpQBAPxtusdwFLRy382PSDx5UUJ4/" crossorigin="anonymous">
+
+  <!-- The loading of KaTeX is deferred to speed up page rendering -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.js" integrity="sha384-97gW6UIJxnlKemYavrqDHSX3SiygeOwIZhwyOKRfSaf0JWKRVj9hLASHgFTzT+0O" crossorigin="anonymous"></script>
+
+  <!-- To automatically render math in text elements, include the auto-render extension: -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <script>
+    document.addEventListener("turbolinks:load", function() {
+      console.log("Load maths")
+      renderMathInElement(document.body, {
+        // customised options
+        // • auto-render specific keys, e.g.:
+        delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+            {left: '\\(', right: '\\)', display: false},
+            {left: '\\[', right: '\\]', display: true}
+        ],
+        // • rendering keys, e.g.:
+        throwOnError : false
+      });
+  });
+  </script>
+
+
+</head>
+
+<body>
+
+
+    <nav>
+        <section id="nav__left">
+            <a href="/"><h1 id="nav__brand">Théo Daron</h1></a>
+            
+            
+                
+                 
+                
+                    <a class="a__hover" href="https:&#x2F;&#x2F;theo.daron.be&#x2F;syntheses&#x2F;">Synthèses</a>
+                 
+                
+            
+        </section>
+        <section id="nav__right">
+            <div id="search" x-data="{results: []}">
+                <input x-on:input="(e) => {results = search(e)}" type="text" name="Recherche" placeholder="Rechercher" id="search_input">
+                <div x-cloak x-show="results.length > 0" id="results">
+                    <template x-for="result in results">
+                        
+                        <div class="result" x-on:click="() => {Turbolinks.visit(result.url)}">
+                            <a :href="result.url">
+                                <h5 x-html="result.title"></h5>
+                            </a>
+                            <p x-html="result.body"></p>
+                        </div>
+
+                    </template>
+                </div>
+            </div>
+            <div id="social">
+                
+
+<a href="https:&#x2F;&#x2F;github.com&#x2F;Kaporos" target="_blank">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+</a>
+
+            </div>
+        </section>
+
+    </nav>
+    <script defer src="/search.js"></script>
+
+
+
+<main class="section">
+  <div class="container">
+    
+
+<article>
+  <div class="other-posts side">
+
+    <h3>Autres articles</h3>
+    <ul>
+    
+    
+        
+         
+        
+           
+          <li>
+            <a class="a__hover" href="">Algèbre 1 (LEPL1021)</a>
+            
+          </li>
+        
+           
+          <li>
+            <a class="a__hover" href="">Analyse 1 (LEPL1021)</a>
+            
+            <ul>
+            
+              <li>
+                <a href="https:&#x2F;&#x2F;theo.daron.be&#x2F;syntheses&#x2F;analyse_1&#x2F;continuite-fonctions&#x2F;">APE 5: Les fonctions, continuité, limites, suites et séries</a>
+              </li>
+            
+              <li>
+                <a href="https:&#x2F;&#x2F;theo.daron.be&#x2F;syntheses&#x2F;analyse_1&#x2F;integrales&#x2F;">APE 8: Intégrales</a>
+              </li>
+            
+              <li>
+                <a href="https:&#x2F;&#x2F;theo.daron.be&#x2F;syntheses&#x2F;analyse_1&#x2F;taylor&#x2F;">APE 7: Taylor</a>
+              </li>
+            
+              <li>
+                <a href="https:&#x2F;&#x2F;theo.daron.be&#x2F;syntheses&#x2F;analyse_1&#x2F;derivabilite&#x2F;">APE 6: Dérivabilité</a>
+              </li>
+            
+            </ul>
+            
+          </li>
+        
+           
+          <li>
+            <a class="a__hover" href="">Physique 1: LEPL1401</a>
+            
+            <ul>
+            
+              <li>
+                <a href="https:&#x2F;&#x2F;theo.daron.be&#x2F;syntheses&#x2F;physique_1&#x2F;electric01&#x2F;">Charges et champ électrique</a>
+              </li>
+            
+            </ul>
+            
+          </li>
+         
+        
+    
+    </ul>
+  </div>
+  <div class="post">
+    <h1 class="title">
+      APE 8: Intégrales
+    </h1>
+    <p class="subtitle"><strong></strong></p>
+    <h2 id="definition-de-l-integrale-d-une-fonction-continue-sur-un-intervalle-ferme">Définition de l'intégrale d'une fonction continue sur un intervalle fermé</h2>
+<p>Prenons $f$, une fonction définie sur un intervalle <strong>fermé</strong> $[a,b]$ si on considère
+une subdivision de l'intervalle $[a,b]$
+$$a = a_0 &lt; a_1 &lt; a_2 &lt; ... &lt; a_{n-1} &lt; a_n &lt; b$$</p>
+<p>et si on choisit un point $t_i$ dans chaque sous intervalle $[a_{i-1}, a_i]$,alors l'intégrale approximée de f sur $[a,b]$ (ou <strong>somme de Riemann</strong> de $f$ sur $[a,b]$) correspondante est donnée par</p>
+<p>$$I = \sum_{i=0}^{n} f(t_i)(a_i - a_{i-1})$$</p>
+<p>(ce qui correspond a la somme de petites zones d'aires sous la fonction)</p>
+<p><a rel="noopener" target="_blank" href="https://www.desmos.com/calculator/sqhatjs67m?lang=fr">Desmos montrant la somme de Riemann</a></p>
+<p>Si $f$ est continue sur $[a,b]$, et que la subdivision de cet intervalle vérifie la propriété suivante: La longueur de la plus grande sous division tends vers zero lorsque le nombre de sous divisions tends vers l'infini, alors n'importe quelle somme de Riemann de ces intervalles sur la fonction $f$ converge vers une valeur qui est la valeur de l'intégrale. </p>
+<p>Pour reformuler de manière plus simple, si f est continue et que les intervalles sont infinitésimaux, alors la somme convergera vers l'intégrale de la fonction telle qu'on la connait, notée
+$$\int_{a}^{b} f(t) dt$$</p>
+<p>NOTE: Une fonction continue par morceaux sur un intervalle $[a,b]$ est aussi intégrable au sens de Riemann</p>
+<h2 id="proprietes-des-integrales">Propriétés des intégrales</h2>
+<p>Je vais passer quelques propriétés évidentes que l'on a déja vues et revues en secondaires.</p>
+<p>Si $\forall t \in [a,b]: m \leq f(t) \leq M$ alors</p>
+<p>$$m(b-a) \leq \int_{a}^{b}f(t)dt \leq M(b-a)$$</p>
+<p>Quelques conventions existent aussi:</p>
+<p>Si $a&gt;b$, alors 
+$$\int_{a}^{b} f(t) dt = -\int_{b}^{a}f(t) dt$$</p>
+<p>Ainsi qu'un théorème, le théorème de la <strong>moyenne</strong>:</p>
+<p>Si $f$ est une fonction continue sur un intervalle fermé $[a,b]$ alors il existe un point c dans $[a,b]$ tel que</p>
+<p>$$\int_{a}^{b}f(t) dt = f(c)(b-a)$$</p>
+<h2 id="theoreme-fondamental">Théorème fondamental</h2>
+<p>Si $f$ est une fonction continue sur un intervalle fermé $[a,b]$, alors la fonction $(x \rightarrow \int_{a}^{x} f(t) dt)$ est dérivable sur $]a,b[$ et pour tout $x$ dans $]a,b[$</p>
+<p>$$\frac{d}{dx}(\int_{a}^{x}f(t)dt) = f(x)$$</p>
+<p>Autrement dit, la dérivée de l'intégrale d'une fonction $f$ vaut $f$</p>
+<p>De plus, si $F$ est une fonction continue et continument dérivable sur $[a,b]$, alors 
+$$\int_{a}^{b}F'(t)dt = F(b) - F(a)$$</p>
+<h2 id="applications-de-l-integrale">Applications de l'intégrale</h2>
+<p><em>Volume de solides de révolution</em>: Soit $f$ une fonction continue et positive sur $[a,b]$. Le volume du solide de révolution obtenu en appliquant une rotation autour de l'axe $x$ de la région planaire entre le graphe de $f$ sur $[a,b]$ et l'axe des $x$ est donné par 
+$$V(f, [a,b]) := \pi \int_{a}^{b}(f(x))^2dx$$</p>
+<p><em>Longueur de courbes</em>: Soit $f$ une fonction définie et continument dérivable sur $[a,b]$. La longueur de la courbe représentant le graphe de $f$ sur $[a,b]$ est donné par</p>
+<p>$$L(f, [a,b]) := \int_{a}^{b} \sqrt{1 + (f'(t))^2} dt $$</p>
+<h2 id="methodes-d-integration">Méthodes d'intégration</h2>
+<p>Petit rappel de deux méthodes d'intégration</p>
+<p><em>Intégration par parties</em>: Si $f$ et $g$ sont deux fonctions continues et continument déribables sur $[a,b]$, alors</p>
+<p>$$\int_{a}^{b} f'(t)g(t) = f(b)g(b) - f(a)g(a) - \int_{a}^{b} f(t)g'(t) dt$$</p>
+<p>(Il y a deux fois $f.g$ car on calcule une intégrale, si on voulait simplement la primitive il n'y aurait que $f(t)g(t)$)</p>
+<p><em>Changement de variable dans une intégrale</em>: Si $g$ est une fonction continument dérivable sur un intervalle $[a,b]$ et si $f$ est une fonction continue sur un intervalle contenant l'image de $g$ alors</p>
+<p>$$\int_{a}^{b}f(g(t))g'(t)dt = \int_{g(a)}^{g(b)}f(u)du$$</p>
+<h2 id="integrales-impropres">Intégrales impropres</h2>
+<p>Une <strong>intégrale impropre</strong> est soit l'intégrale d'une fonction continue sur un intervalle de la forme $[a, + \infty[, ]-\infty, b]$ soit l'intégrale d'une fonction continue sur un interval $[a, b[, ]a, b]$ qui n'est pas bornée sur cet intervalle. Dans ce cas, l'intégrale n'est a prioris pas définie</p>
+<p>Définition: Soit $f$ une fonction continue sur un intervalle de la forme $[a, +\infty[$. Si la limite suivante existe</p>
+<p>$$\lim_{c \to + \infty} \int_{a}^{c} f(t) dt$$</p>
+<p>Cette limite est notée $\int_{a}^{+\infty} f(t)dt$ et est appelée <strong>intégrale impropre</strong> de $f$ sur $[a, +\infty[$. On dit que l'intégrale est convergente si la limite existe, sinon elle est dite divergente.</p>
+<p>Cette définition se transpose a tous les autrrs cas d'intégrale impropre. Par exemple, si $f$ est continue sur l'intervalle $[a, b[$ (mais pas forcément bornée) et si la limite suivante existe</p>
+<p>$$\lim_{c \to + b^{-}} \int_{a}^{c} f(t) dt$$
+Cette limite est notée $\int_{a}^{b} f(t)dt$ et est appelée <strong>intégrale impropre</strong> de $f$ sur $[a, b[$. On dit que l'intégrale est convergente si la limite existe, sinon elle est dite divergente.</p>
+<h2 id="criteres-de-convergece">Critères de convergece</h2>
+<p><em>Critère de comparaison</em>: Soient $f$ et $g$ deux fonctions continues sur $[a, +\infty[$ telles que 
+$$|f(x)| \leq g(x)$$
+pour tout x dans $[a, +\infty[$. Si l'intégrale impropre $\int_{a}^{+\infty} g(x)dx$ est convergente alors l'intégrale impropre $\int_{a}^{+\infty} f(x)dx$ est également convergente.</p>
+<p><em>Test intégral pour la convergence de séries</em>: Soit $f$ une fonction continue, décroissante et positive sur $[1, +\infty[$</p>
+<ol>
+<li>Soit $\sum_{n=1}^{\infty}a_n$ une série dont le terme général satisfait
+$a_n \leq f(n)$
+pour tout $n$. Si l'intégrale impropre $\int_{1}^{+\infty}f(x)dx$ est convergente, alors la série $\sum_{n=1}^{\infty}a_n$ converge également.</br></br></li>
+<li>Soit $\sum_{n=1}^{\infty}a_n$ une série dont le terme général satisfait
+$a_n \geq f(n)$
+pour tout $n$. Si série $\sum_{n=1}^{\infty}a_n$ converge, alors l'intégrale impropre $\int_{1}^{+\infty} f(x)dx$ est également convergente</li>
+</ol>
+<p>Autrement dit, si le plus grand converge, le plus petit aussi !</p>
+<p>Et si $a_n := f(n)$ alors leur convergence est identique, convergentes ou bien divergentes toutes les deux.</p>
+
+  </div>
+  <div class="post-toc side">
+
+    
+    <h3>Navigation</h3>
+    <ul>
+    
+        <li>
+            <a href="https://theo.daron.be/syntheses/analyse_1/integrales/#definition-de-l-integrale-d-une-fonction-continue-sur-un-intervalle-ferme">Définition de l&#x27;intégrale d&#x27;une fonction continue sur un intervalle fermé</a>
+            
+        </li>
+    
+        <li>
+            <a href="https://theo.daron.be/syntheses/analyse_1/integrales/#proprietes-des-integrales">Propriétés des intégrales</a>
+            
+        </li>
+    
+        <li>
+            <a href="https://theo.daron.be/syntheses/analyse_1/integrales/#theoreme-fondamental">Théorème fondamental</a>
+            
+        </li>
+    
+        <li>
+            <a href="https://theo.daron.be/syntheses/analyse_1/integrales/#applications-de-l-integrale">Applications de l&#x27;intégrale</a>
+            
+        </li>
+    
+        <li>
+            <a href="https://theo.daron.be/syntheses/analyse_1/integrales/#methodes-d-integration">Méthodes d&#x27;intégration</a>
+            
+        </li>
+    
+        <li>
+            <a href="https://theo.daron.be/syntheses/analyse_1/integrales/#integrales-impropres">Intégrales impropres</a>
+            
+        </li>
+    
+        <li>
+            <a href="https://theo.daron.be/syntheses/analyse_1/integrales/#criteres-de-convergece">Critères de convergece</a>
+            
+        </li>
+    
+    </ul>
+
+
+  </div>
+
+</article>
+
+
+
+  </div>
+</main>
+
+</body>
+
+</html>
