@@ -1,58 +1,60 @@
 +++
-title = "La continuité des fonctions"
+title = "APE 5: Les fonctions, continuité, limites, suites et séries"
 +++
+## La continuité
+La continuité d'une fonction $F: I \rightarrow R$ en un point $a$ est définie telle que:
 
-## Une fonction ?
+$\forall \epsilon > 0 \exist \delta > 0 : \forall x \in I : (|x-a| < \delta \Rightarrow |f(x) - f(a)| < \epsilon)$
 
-Une **fonction** peut être définie par une formule ou, plus généralement, toute **règle déterministe** qui associe une (et une seule) valeur réelle à tout réel appartenant au domaine D.
+Autrement dit, la fonction est continue en un point a si, pour n'importe quelle précision $\epsilon$ il existe un $\delta$ tel que la distance entre $x$ et $a$ est inférieure a $\delta$ et que la distance entre $f(x)$ et $f(a)$ est inférieure a $\epsilon$
 
-Une fonction est **bornée** s'il y a un nombre positif $m$ tel que toute valeure de f est comprise entre $-m \leq f(x) \geq  m $
+### Propriétés de la continuité
+Prenons deux fonctions $f(x)$ et $g(x)$ continues, alors:
 
-Et une fonction *bounded away from 0* signifie qu'elle ne s'approche jamais de zero.
+- $f(x) + g(x)$ est continu
+- $f(x) - g(x)$ est continu
+- $f(x).g(x)$ est continu
+- $\frac{f(x)}{g(x)}$ est continu seulement si $g(x) \neq 0$
 
-## La continuité d'une fonction
 
-Une fonction est continue en un point $c$ si et seulement si pour que la valeur de f(x) devienne proche de la valeur exacte f(c) il suffit de choisir une valeur de x suffisament proche de c.
+### Théorèmes continuité
+Voici deux théorèmes liés a la continuité
 
-Définition rigoureuse:
-$$ \forall \epsilon > 0 \exists S(\epsilon) : |x-c| < S \Rightarrow |f(x) - f(c)| < \epsilon $$
+Le théorème des **valeurs extrêmes** nous dit que si une fonction $f(x)$ est continue sur un intervalle $[a,b]$ alors  $f(x)$ possède un maximum et un minimum entre $a$ et $b$. 
 
-### Opérations préservant la continuité
 
-Si $f,g,h$ sont continues en c, et que $h(c) \neq 0$.
-
-Alors $f+g$, $fg$ et $\frac{f}{h}$ sont continues en c.   
-
-## Continuité uniforme
-
-Une fonction $f(x)$ est considérée comme uniformément continue sur un intervalle $I$ si, pour n'importe quelle tolérance $\epsilon > 0$ il y a une précision $\delta$ telle que si $x$ et $y$ sont dans $I$ et diffèrent de moins de $\delta$ alors $f(x) et f(z)$ diffèrent de moins d'$\epsilon$ 
-
-Et si une fonction est continue sur $[a,b]$ alors f est uniformément continue sur $[a,b]$
+Le théorème des **valeurs intermédiaires** nous dit que si une fonction $f(x)$ est continue sur un intervalle $[a,b]$ alors $f(x)$ prendra toutes les valeurs possibles entre $f(a)$ et $f(b)$. </br>
+$\forall y \in [f(a), f(b)] \exist x \in [a,b] : f(x) = y$
 
 ## Les limites
+La limite d'une fonction $f(x)$ en un point $c$ est définie telle que si $\lim_{x \to c} f(x) = L$ alors cela signifie que
+$\forall \epsilon > 0 \exist \delta(\epsilon) > 0 : \forall X \in I : |f(x) - L| < \epsilon \Rightarrow |x-c| < \delta$
 
-Pour définir la continuité, il n'y a pas besoin de limites, mais celles ci peuvent quand même s'avérer très pratiques !
+Et une fonction est définie comme continue en $c$ si et seulement si $\lim_{x \to c} f(x) = f(c)$
 
-On peut dire qu'une fonction $f$ est continue en $c$ quand:
-$$\lim_{x \rightarrow c}f(x) = f(c) $$
+De plus, les limites sont conservées via les opérations traditionnelles. Prenons $f(x)$ et $g(x)$. Si $\lim_{x \to c} f(x) = L$ et que $\lim_{x \to c} g(x) = M$, alors cela signifie que:
 
-Si non, alors $f$ est **discontinue** en $c$
+- $\lim_{x \to c} f(x) \pm g(x) = L \pm M$
+- $\lim_{x \to c} f(x).g(x) = L.M$
+- $\lim_{x \to c} \frac{f(x)}{g(x)} = \frac{L}{M}$ (si $M \neq 0$)
 
-La définition d'une limite est telle que:
+Il existe également un théorème très pratique, le **théorème de l'éteau.** Si $f(x) \leq g(x) \leq h(x)$ pour tout x dans un intervalle ouvert autour de $c$ , et si $\lim_{x \to c} f(x) = L$ **et que** $\lim_{x \to c} h(x) = L$ alors, $\lim_{x \to c} g(x) = L$ également.
 
-$$\lim_{x \rightarrow c}f(x) = L $$
-$$ \forall \epsilon \exists \delta : 0 < |x-c| < \delta \Rightarrow |f(x) - L| < \epsilon $$
+## Les suites de fonctions
+Une suite de fonction $f_nn \geq 1$, on peut dire que la suite **converge ponctuellement** (simplement) vers la fonction $f$ si on a pour tout point $x \in D$ que $f_n(x) \rightarrow f(x)$</br>
+Autrement dit, $\forall x \in D, \forall \epsilon > 0, \exist N: \forall n > N |f_n(x) - f(x)| < \epsilon$
 
-Aux limites s'appliquent (entre autres) le théorème du **sandwich** (gendarme, étau, ...)
+On peut aussi dire qu'une suite **converge uniformément** vers la fonction $f$ si on a:
+$\forall \epsilon > 0, \exist N : \forall x \in D \forall n > N |f_n(x) - f(x)| < \epsilon$
 
-De plus,
+La différence entre les deux est que dans la convergence **ponctuelle** il peut y avoir un rang $N$ différent par $x$, tandis que dans la convergence **uniforme** il y a un unique rang $N$ pour tous les $x$. On peut dire qu'ils convergent a la même vitesse.
 
-Si $\lim_{x \rightarrow c}f(x) = L_1, \lim_{x \rightarrow c}g(x) = L_2, \lim_{x \rightarrow c}h(x) = L_3 \neq 0$
+Si une suite de fonctions continues converge uniformément vers une fonction f , cette fonction f
+est continue (mais si la suite converge ponctuellement on ne peut rien conclure
+## Les séries entières
+Une série entière $\sum^{\infty}_{n=0} c_n(x-a)^n$ doit forcément se trouver dans un de ces trois cas:
 
-$(a) \lim_{x \rightarrow c}(f(x) + g(x)) = L_1 + L_2$
-
-$(b) \lim_{x \rightarrow c}(f(x)g(x)) = L_1L_2$
-
-$(c) \lim_{x \rightarrow c}\frac{f(x)}{h(x)} = \frac{L_1}{L_3}$
-
+1. La série converge uniquement pour $x=a$ (et vaut 0)
+2. Il existe un nombre strictement positif R appelé **rayon de convergence** tel que la série converge **absolument** pour $x$ tel que $|x - a| < R$ et **diverge** si $|x-a| > R$. <br> Le comportement en $x=a \pm R$ peut être soit convergent soit divergent.
+3. La série converge absolument pour tout $x$ (on dit que le rayon de convergence R est infini).
 
